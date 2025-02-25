@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yosef Katsir Memorial Page</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #2C3E50;
+        }
+        header {
+            background-image: url('tulip.png'); /* Replace with your chosen image */
+            background-size: cover; /* Covers the entire header */
+            background-repeat: no-repeat; /* Prevents repeating */
+            background-position: center; /* Centers the image */
+            color: black;
+            padding: 20px;
+            text-align: center;
+            /* Uncomment the next line to use a blue background instead of an image */
+            /* background-color: #4169E1; */
+        }
+        .container {
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .header-image {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .personal-details {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .personal-details h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .personal-details p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        .link {
+            font-size: 16px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .galleries {
+            margin-top: 40px;
+        }
+        .gallery {
+            margin-bottom: 30px;
+        }
+        .gallery h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .gallery-content {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px 0;
+        }
+        .gallery-content img {
+            flex-shrink: 0;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+        .gallery-content img:nth-child(3) {
+            transform: scale(1.5);
+        }
+        .gallery-content img:not(:nth-child(3)) {
+            transform: scale(0.8);
+        }
+        .comment-form {
+            margin-top: 20px;
+        }
+        .comment-form textarea {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .comment-form input[type="file"] {
+            margin-bottom: 10px;
+        }
+        .comment-form button {
+            padding: 10px 20px;
+            background-color: #4169E1;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .comments-preview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .comment {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .comment p {
+            margin: 0 0 10px 0;
+        }
+        .like-button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #007bff;
+            cursor: pointer;
+        }
+        .view-all-comments {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .view-all-comments a {
+            font-size: 16px;
+            color: #007bff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        .map-frame {
+            margin-top: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+        }
+        @media (max-width: 768px) {
+            .personal-details h1 {
+                font-size: 20px;
+            }
+            .personal-details p {
+                font-size: 16px;
+            }
+            .link {
+                font-size: 14px;
+            }
+            .gallery h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <script>
+        function calculateAge(birthYear, deathYear) {
+            return deathYear - birthYear;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const ageElement = document.getElementById('age');
+            const birthYear = 1933;
+            const deathYear = 2024;
+            ageElement.textContent = calculateAge(birthYear, deathYear);
+        });
+
+        function likeComment(button) {
+            const counter = button.nextElementSibling;
+            counter.textContent = parseInt(counter.textContent) + 1;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>In Loving Memory</h1>
+    </header>
+    <div class="container">
+        <img class="header-image" src="2025-01-21 22 16 51.png" alt="Header Image">
+        <div class="personal-details">
+            
+            <p>לזכרו של</p>
+            <h1>יוסף קציר</h1>
+            <p>1932-2025</p>
+          
+            <p>Age: <span id="age"></span></p>
+        </div>
+       <!-- <div class="links">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vCTZ_AING4o" frameborder="0" allowfullscreen></iframe>
+            <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/loU2GALwmqg?si=vXjC0tWTQKfxMb3C" frameborder="0" allowfullscreen></iframe>-->
+            <div>
+             <h2>
+               <!-- <button 
+                    style="padding: 10px 20px; background-color: #4169E1; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;"
+                    onclick="window.open('https://drive.google.com/file/d/1X8dCCOtu6wDsjV5iy1K3CWQlvTYsoCmo/view', '_blank');">
+                    הרמת כוסית וויסקי לזכרו
+                </button> -->
+            </h2>
+
+            </div>
+        </div>
+      <!--  <div class="galleries">
+            <div class="gallery">
+                <h2>גלריית תמונות</h2>
+                <div class="gallery-content">
+                    <img src="st1 (1).jpeg" alt="Memorial Image 1">
+                    <img src="st1 (2).jpeg" alt="Memorial Image 2">
+                   <img src="tulip.jpeg" alt="Memorial Image 2">
+                    <img src="tulip (2).jpeg" alt="Memorial Image 2">
+                </div> 
+            </div>-->
+        </div> -->
+     
+  <!-- Google Photos Album Integration-->
+      <div class="container">
+        <h2>אלבום</h2>
+        <iframe src="album.html" loading="lazy" style="width:100%; height:480px;">
+            Your browser does not support iframes.
+        </iframe>
+          <a class="link" href="https://photos.app.goo.gl/xeineWGSMo3BGPxc6" target="_blank">More images</a> 
+
+          <div>
+    <h2>
+        <button 
+            style="padding: 10px 20px; background-color: #4169E1; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;"
+            onclick="window.open('carpet.html', '_blank');">
+            שטייחים
+        </button>
+   
+</div>
+
+        <!-- End of Google Photos Album Integration -->
+   <!-- ------------------------------------------------------------------------------ -->
+        <!--<div class="comment-form">
+            <h2>Add Your Comment</h2>
+            <form>
+                <textarea placeholder="Write a short message..."></textarea>
+                <input type="file" accept="image/*">
+                <button type="submit">Post Comment</button>
+            </form>
+        </div>
+        <div class="comments-preview">
+            <div class="comment">
+                <p><strong>Emily White:</strong> Truly touching and heartfelt.</p>
+                <div class="like-button" onclick="likeComment(this)">❤️ <span>0</span></div>
+            </div>
+            <div class="comment">
+                <p><strong>Alex Brown:</strong> May their memory be a blessing.</p>
+                <div class="like-button" onclick="likeComment(this)">❤️ <span>0</span></div>
+            </div>
+        </div>
+        <div class="view-all-comments">
+            <a href="comments.html">View All Comments</a>
+        </div>-->
+         <div class="map-frame">
+    <h2>מיקום קבורה</h2>
+    <p>חלקה: 12 | שורה: 4 | ישוב: זכרון יעקב | מדינה: ישראל</p>
+    <iframe 
+        id="dynamic-map"
+        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d245.71976740095118!2d34.95214869971373!3d32.56976681047734!3m2!1i1024!2i768!4f13.1!5e1!3m2!1siw!2sil!4v1740518689298!5m2!1siw!2sil" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
+    <div style="text-align: center; margin-top: 10px;">
+        <button id="get-directions" style="padding: 10px 20px; background-color: #4169E1; color: white; text-decoration: none; border: none; border-radius: 5px; cursor: pointer;">
+        Directions
+    </button>
+    <a href="https://www.waze.com/en/live-map/directions?latlng=32.57005157174547%2C34.95226101015693" 
+       target="_blank" 
+       style="padding: 10px 20px; background-color: #4169E1; color: white; text-decoration: none; border-radius: 5px; display: inline-block;">
+        Directions with Waze
+    </a>
+
+    </div>
+</div>
+
+<script>
+    document.getElementById('get-directions').addEventListener('click', function () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                const userLat = position.coords.latitude;
+                const userLng = position.coords.longitude;
+                const destinationLat = 31.750001; // Replace with actual destination latitude
+                const destinationLng = 34.662887; // Replace with actual destination longitude
+                const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${destinationLat},${destinationLng}`;
+                
+                // Open directions in a new tab
+                window.open(directionsUrl, '_blank');
+            }, function (error) {
+                alert('Unable to fetch location. Please enable location services.');
+            });
+        } else {
+            alert('Geolocation is not supported by your browser.');
+        }
+    });
+</script>
+    </div>
+<div>
+             <h2>
+               <button 
+                    style="padding: 10px 20px; background-color: #4169E1; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;"
+                    onclick="window.open('https://soulinklive.github.io/shmulik/', '_blank');">
+                    לעמוד של שמוליק ציבעוני ז"ל 
+                </button>
+            </h2>
+
+            </div>
+    
+    <footer>
+        <a class="link" href="https://www.talkats.com" target="_blank">Soulink Memorial Services</a>.
+        &copy; 2025 All rights reserved.
+    </footer>
+</body>
+</html>
